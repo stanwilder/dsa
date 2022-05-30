@@ -123,6 +123,18 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  return arr.sort((a, b) => {
+    let firstVal = a[property];
+    let secondVal = b[property];
+
+    if (firstVal < secondVal) {
+      return -1;
+    } else if (firstVal > secondVal) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,6 +151,7 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  return url.includes('https://');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -162,6 +175,23 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  let helpCheck = (set) => {
+    return set.every(cell => cell !== '' && cell === set[0])
+      ? true : false;
+  };
+
+  if (helpCheck(board[0])) return true;
+  if (helpCheck(board[1])) return true;
+  if (helpCheck(board[2])) return true;
+
+  if (helpCheck([board[0][0], board[1][0], board[2][0]])) return true;
+  if (helpCheck([board[0][1], board[1][1], board[2][1]])) return true;
+  if (helpCheck([board[0][2], board[1][2], board[2][2]])) return true;
+
+  if (helpCheck([board[0][0], board[1][1], board[2][2]])) return true;
+  if (helpCheck([board[0][2], board[1][1], board[2][0]])) return true;
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
