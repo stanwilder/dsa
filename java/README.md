@@ -79,4 +79,4 @@ Create a github action to automatically run all of your tests as you check in yo
 
 [Code Challenge 1 Whiteboard]()
 
-[Code Challenge 2 Whiteboard](Downloads/array-insert-shift.jpg)
+[Code Challenge 2 Whiteboard](./Downloads/array-insert-shift.jpg)
