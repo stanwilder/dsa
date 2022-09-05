@@ -1,6 +1,6 @@
 package codechallenges.linkedlist;
 
-import codechallenges.AnimalShelter;
+import codechallenges.linkedlist.stacksAndQueues.AnimalShelter;
 import org.junit.jupiter.api.Test;
 
 import java.util.Stack;
