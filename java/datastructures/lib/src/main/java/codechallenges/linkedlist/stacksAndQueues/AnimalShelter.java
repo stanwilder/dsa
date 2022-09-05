@@ -1,4 +1,4 @@
-package codechallenges;
+package codechallenges.linkedlist.stacksAndQueues;
 
 import java.util.*;
 
