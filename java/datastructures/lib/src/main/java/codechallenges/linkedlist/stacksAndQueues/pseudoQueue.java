@@ -2,16 +2,26 @@ package codechallenges.linkedlist.stacksAndQueues;
 
 import java.util.Stack;
 
-public class pseudoQueue {
-  static class queue{
-    static Stack<Integer> int1 = new Stack<Integer>();
-    static Stack<Integer> int2 = new Stack<Integer>();
-    static void enqueue(int enq){
-      while (!int1.isEmpty()){
-        int2.push(int1.pop());
+public class pseudoQueue<T> {
+   Stack<T> firstStack;
+   Stack<T> secondStack;
 
-//        got help from geeksforegeeks. got confused here but ill keep working at it.
+  public pseudoQueue() {
+    this.firstStack = new Stack<>();
+    this.secondStack = new Stack<>();
+  }
+
+  public void enqueue(T value){
+    firstStack.push(value);
+      }
+      public T dequeue(){
+    if (secondStack.isEmpty()){
+      while(!firstStack.isEmpty()){
+        secondStack.push(firstStack.pop());
       }
     }
-  }
+    return secondStack.pop();
+    }
 }
+
+//        got help from geeksforegeeks. got confused here but ill keep working at it.
