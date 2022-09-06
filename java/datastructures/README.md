@@ -1,10 +1,11 @@
 # Data Structures
+- Stacks and Queues
 
 ## Implementation Notes
 
+
 ## Code Challenges
 
-### Challenge 01
 
 Location: `codechallenges/linkedlist/LinkedListChallenges`
 
