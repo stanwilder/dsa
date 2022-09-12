@@ -54,6 +54,24 @@ public void postOrder(ArrayList<T> list, Node<T> root) {
   }
   list.add(root.value);
 }
+
+  public static int findMaxValue(Node root) {
+    if (root == null) {
+      System.out.println(Integer.MIN_VALUE);
+      return Integer.MIN_VALUE;
+    }
+    int max = (int) root.value;
+    int maxLeft = findMaxValue(root.left);
+    int maxRight = findMaxValue(root.right);
+
+    if (maxLeft > max) {
+      max = maxLeft;
+    }
+    if (maxRight > max) {
+      max = maxRight;
+    }
+    return max;
+  }
   }
 
 //  Help from Mandy and Youtube
