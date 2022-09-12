@@ -1,6 +1,7 @@
 package codechallenges.trees;
 
 import codechallenges.linkedlist.stacksAndQueues.Node;
+import codechallenges.linkedlist.stacksAndQueues.Queue;
 
 import java.util.ArrayList;
 
@@ -72,6 +73,24 @@ public void postOrder(ArrayList<T> list, Node<T> root) {
     }
     return max;
   }
+  public ArrayList breadthFirst(Node<T> root) {
+    ArrayList<T> list = new ArrayList<>();
+    Queue<Node<T>> breadth = new Queue<>();
+    breadth.enqueue(root);
+
+    while (!breadth.isEmpty()) {
+      Node<T> front = breadth.dequeue();
+      list.add(front.value);
+
+      if (front.left != null) {
+        breadth.enqueue(front.left);
+      }
+      if (front.right != null) {
+        breadth.enqueue(front.right);
+      }
+    }
+    return list;
+   }
   }
 
 //  Help from Mandy and Youtube
