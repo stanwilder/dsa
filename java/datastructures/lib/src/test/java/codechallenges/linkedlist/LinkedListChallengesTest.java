@@ -9,8 +9,8 @@ public class LinkedListChallengesTest
   @Test
   void testAChallenge()
   {
-    LinkedListChallenges sut = new LinkedListChallenges();
-    sut.linkedListChallenge06();
+    LinkedList sut = new LinkedList();
+//    sut.linkedList();
     System.out.println("test something here");
     assertTrue(true);
   }
