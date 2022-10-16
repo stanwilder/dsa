@@ -33,5 +33,21 @@ public class LinkedList<T> {
    return result + "NULL";
   }
 
+  public void append(T val) {
+    Node<T> tail = new Node<T>(val);
+
+      if(head == null){
+        tail.next = null;
+        head = tail;
+      } else {
+        Node<T> current = head;
+        while(current.next != null) {
+          current = current.next;
+        }
+        current.next = tail;
+       tail.next = null;
+      }
+    size++;
+  }
 }
 
