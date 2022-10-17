@@ -93,6 +93,21 @@ public class LinkedList<T> {
    return this.size;
     }
 
+    public LinkedList zipList(LinkedList list1, LinkedList list2){
+   Node<T> nodeOne = list1.head;
+   Node<T> nodeTwo = list2.head;
+   LinkedList<T> zipList = new LinkedList<>();
 
+   while(nodeOne != null || nodeTwo != null){
+     if(nodeOne != null){
+       zipList.append(nodeOne.getValue());
+       nodeOne = nodeOne.next;
+     } if (nodeTwo != null){
+       zipList.append(nodeTwo.getValue());
+       nodeTwo = nodeTwo.next;
+     }
+   }
+   return zipList;
+    }
  }
 
