@@ -74,7 +74,25 @@ public class LinkedList<T> {
      curr = curr.next;
    }
     }
+    public int kthFromEnd(int k) {
+      if (head == null || k < 0) {
+        throw new IllegalArgumentException("List empty.");
+      }
+      if (k > this.getSize()) {
+        throw new IllegalArgumentException("List not long enough");
+      }
+      Node<T> curr = head;
+      int kthPosition = (this.getSize() - k);
+      System.out.println("kth position:" + kthPosition);
+      for (int i = 1; i < kthPosition; i++) {
+        curr = curr.next;
+      }
+      return (int) curr.value;
+    }
+    public int getSize(){
+   return this.size;
+    }
 
 
-}
+ }
 
