@@ -1,7 +1,5 @@
 package codechallenges.linkedlist;
 
-import codechallenges.linkedlist.stacksAndQueues.Node;
-
 public class LinkedList<T> {
  public Node<T> head = null;
  public int size = 0;
@@ -47,7 +45,36 @@ public class LinkedList<T> {
         current.next = tail;
        tail.next = null;
       }
-    size++;
   }
+
+  public void insertBefore(T val, T newVal){
+   Node<T> node = new Node<T>(newVal);
+   Node<T> curr = head;
+
+   while(curr.next != null){
+     if(curr.next.value == val){
+       node.next = curr.next;
+       curr.next = node;
+       size++;
+     } else {
+     curr = curr.next;
+      }
+    }
+    }
+
+    public void insertAfter(T val, T newVal){
+   Node<T> node = new Node<T>(newVal);
+   Node<T> curr = head;
+   while(curr.next != null){
+     if(curr.value == val){
+       node.next = curr.next;
+       curr.next = node;
+       size++;
+     }
+     curr = curr.next;
+   }
+    }
+
+
 }
 
